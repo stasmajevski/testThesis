@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Therapo_v1", "Therapo_v1.csproj", "{F0DE9EC2-04E9-2635-6EF5-C407F41D4B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Therapo_v1.Editor", "Therapo_v1.Editor.csproj", "{ABDEB005-5EE5-0BAC-2524-3ABFC6F1E01E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0DE9EC2-04E9-2635-6EF5-C407F41D4B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0DE9EC2-04E9-2635-6EF5-C407F41D4B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0DE9EC2-04E9-2635-6EF5-C407F41D4B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0DE9EC2-04E9-2635-6EF5-C407F41D4B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDEB005-5EE5-0BAC-2524-3ABFC6F1E01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDEB005-5EE5-0BAC-2524-3ABFC6F1E01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDEB005-5EE5-0BAC-2524-3ABFC6F1E01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDEB005-5EE5-0BAC-2524-3ABFC6F1E01E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorrorTutorial_Part0.Plugins", "HorrorTutorial_Part0.Plugins.csproj", "{1440F8CE-745D-2700-DA81-62525872D977}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorrorTutorial_Part0", "HorrorTutorial_Part0.csproj", "{76EAFC55-3659-2C80-D1F3-60F8E3279FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorrorTutorial_Part0.Editor", "HorrorTutorial_Part0.Editor.csproj", "{0A397286-C1AB-32DE-D2D8-D2A195C8993E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1440F8CE-745D-2700-DA81-62525872D977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1440F8CE-745D-2700-DA81-62525872D977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1440F8CE-745D-2700-DA81-62525872D977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1440F8CE-745D-2700-DA81-62525872D977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EAFC55-3659-2C80-D1F3-60F8E3279FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EAFC55-3659-2C80-D1F3-60F8E3279FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EAFC55-3659-2C80-D1F3-60F8E3279FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EAFC55-3659-2C80-D1F3-60F8E3279FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A397286-C1AB-32DE-D2D8-D2A195C8993E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A397286-C1AB-32DE-D2D8-D2A195C8993E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A397286-C1AB-32DE-D2D8-D2A195C8993E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A397286-C1AB-32DE-D2D8-D2A195C8993E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
