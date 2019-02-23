@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractScript : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class InteractScript : MonoBehaviour
 
     [HideInInspector] public bool InReach;
     public string Character = "e";
+    // public Button conButoon;
+
+    Button aa;
 
     // UI SETTINGS
     [Header("UI Settings")]
@@ -23,9 +27,17 @@ public class InteractScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (OVRInput.Get(OVRInput.Button.Two))
+        {
+         //   aa = GameObject.FindGameObjectWithTag("Con").GetComponent<Button>();
+         //   aa.onClick.Invoke();
+            //  aa.onClick.AddListener(() => FindObjectOfType<DialogueManager>().DisplayNextSentence());
+            //aa.RemoveAllListeners();
+             FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            Debug.Log("TEST");
+        }
 
-
-        Ray ray = new Ray(transform.position, transform.forward);
+            Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
@@ -43,7 +55,6 @@ public class InteractScript : MonoBehaviour
 
                 if (Input.GetKey("e"))
                 {
-
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                 }
             }
