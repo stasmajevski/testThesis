@@ -15,38 +15,27 @@ public class DialogueManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         sentences = new Queue<string>();
-       // dialogCanvas.gameObject.SetActive(true);
-        // dialogCanvas.gameObject.SetActive(false);
-        //   dialogueMessage.gameObject.SetActive(false);
-        //   nameText.gameObject.SetActive(false);
-        //   conButoon.gameObject.SetActive(false);
+        conButoon.gameObject.SetActive(false);
     }
 
-  /*  private void Update()
+    private void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.Two))
+        if (OVRInput.GetUp(OVRInput.Button.Two))
         {
-          //  conButoon.onClick.Invoke();
-
-            // conButoon.onClick.Invoke();
-            // DisplayNextSentence();
-            Debug.Log("TEST");
+            DisplayNextSentence();
         }
-    }*/
+    }
 
     public void StartDialogue (Dialogue dialogue)
     {
         dialogCanvas.gameObject.SetActive(true);
-       /* dialogueMessage.gameObject.SetActive(true);
         conButoon.gameObject.SetActive(true);
-        nameText.gameObject.SetActive(true);*/
         nameText.text = dialogue.name;
 
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
         {
-            Debug.Log(sentence);
             sentences.Enqueue(sentence);
         }
 
@@ -55,15 +44,14 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence ()
     {
-        Debug.Log(sentences.Count);
-            if (sentences.Count == 0)
-            {
-               // EndDialogue();
-                return;
-            }
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
 
-            string sentence = sentences.Dequeue();
-            dialogueMessage.text = sentence;
+        string sentence = sentences.Dequeue();
+        dialogueMessage.text = sentence;
     }
 
     public void EndDialogue()
