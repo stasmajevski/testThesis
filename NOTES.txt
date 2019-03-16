@@ -1,2 +1,5 @@
 16.02 Adding VR in Unity - problems with camera
 23.02 Trying to add Dialogue system - Onclick event (opustowaet QUEUE)
+2.03 miss
+9.03 Added text when player interacts with door
+16.03 Added transparent wall with Text
