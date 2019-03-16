@@ -46,27 +46,21 @@ public class InteractScript : MonoBehaviour
                     //     TextPrefabInstance.transform.localScale = new Vector3(0, 0, -312);
                     //     Destroy(TextPrefab);
                     TextActive = true;
-                  //  TextPrefabInstance.transform.SetParent(transform, true); // Make the player the parent object of the text element
+                    //  TextPrefabInstance.transform.SetParent(transform, true); // Make the player the parent object of the text element
                 }
 
-                if (OVRInput.Get(OVRInput.Button.One))
+                if (OVRInput.Get(OVRInput.Button.Two))
                 {
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                     Destroy(hit.collider.GetComponent<BoxCollider>());
+                    if (TextActive)
+                    {
+                        TextPrefabInstance.gameObject.SetActive(false);
+                        TextActive = false;
+                    }
                 }
             }
-            else
-            {
-                InReach = false;
-
-                // Destroy the UI element when Player is no longer in reach of the door
-                if (TextActive)
-                {
-                    DestroyImmediate(TextPrefabInstance);
-                    TextActive = false;
-                }
-            }
-    }
+        }
 
         else
         {
@@ -75,7 +69,7 @@ public class InteractScript : MonoBehaviour
             // Destroy the UI element when Player is no longer in reach of the door
             if (TextActive)
             {
-                DestroyImmediate(TextPrefabInstance);
+                TextPrefabInstance.gameObject.SetActive(false);
                 TextActive = false;
             }
         }

@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour {
     public Button conButoon;
 
     private Queue<string> sentences;
+    private int count = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +21,13 @@ public class DialogueManager : MonoBehaviour {
 
     private void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.Two))
+        if (OVRInput.GetUp(OVRInput.Button.One))
         {
-            DisplayNextSentence();
+            count++;
+            if(count > 1)
+            {
+                DisplayNextSentence();
+            }
         }
     }
 
