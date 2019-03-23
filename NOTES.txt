@@ -4,4 +4,7 @@
 9.03 Added text when player interacts with door
 16.03 Added transparent wall with Text
 23.03 Talk with the Doctor, before u open the door. Fixed isue with Dialogue + camera(changed Layer to CANVAS). Added "idle" state to Spider.
-Added Music (Play/Pause by button)
+Added SteamAudio Plugin for Music (Play/Pause by button). Better text(pixels) in dialogue canvas.
+
+TODO
+29.03 - Player movement, grab spider, spider walk after first wall dissapears

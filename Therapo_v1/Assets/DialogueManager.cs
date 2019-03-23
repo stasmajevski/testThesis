@@ -1,21 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour {
-
+public class DialogueManager : MonoBehaviour
+{
     public Text dialogueMessage;
     public Text nameText;
     public GameObject dialogCanvas;
     public Button conButoon;
 
-    private Queue<string> sentences;
-    private int count = 0;
+    private Queue<string> _sentences;
+    private int _count;
 
-	// Use this for initialization
-	void Start () {
-        sentences = new Queue<string>();
+    // Use this for initialization
+    private void Start()
+    {
+        _sentences = new Queue<string>();
         conButoon.gameObject.SetActive(false);
     }
 
@@ -23,39 +23,33 @@ public class DialogueManager : MonoBehaviour {
     {
         if (OVRInput.GetUp(OVRInput.Button.One))
         {
-            count++;
-            if(count > 1)
-            {
-                DisplayNextSentence();
-            }
+            _count++;
+            if (_count > 1) DisplayNextSentence();
         }
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue)
     {
         dialogCanvas.gameObject.SetActive(true);
         conButoon.gameObject.SetActive(true);
         nameText.text = dialogue.name;
 
-        sentences.Clear();
+        _sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
+        foreach (var sentence in dialogue.sentences) _sentences.Enqueue(sentence);
 
         DisplayNextSentence();
     }
 
-    public void DisplayNextSentence ()
+    public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (_sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        var sentence = _sentences.Dequeue();
         dialogueMessage.text = sentence;
     }
 
