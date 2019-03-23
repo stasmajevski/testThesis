@@ -12,16 +12,17 @@ public class InteractScript : MonoBehaviour
 
     [HideInInspector] public GameObject TextPrefabInstanceCopy; // A copy of the text prefab to prevent data corruption
     [HideInInspector] public bool TextActive;
-    private GameObject[] gameObjects;
-
     public GameObject TransparentWall;
-
     public float interactDistance = 5f;
+
+    private GameObject[] gameObjects;
+    private bool musicIsPlaying;
 
     private void Start()
     {
         TextPrefabInstance.gameObject.SetActive(false);
         TextActive = true;
+        musicIsPlaying = true;
     }
 
     // Update is called once per frame
@@ -32,7 +33,6 @@ public class InteractScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
             Debug.Log(hit.collider.gameObject);
-
             if (hit.collider.tag == "Door")
             {
                 Debug.Log("REACHED");
@@ -49,7 +49,6 @@ public class InteractScript : MonoBehaviour
                         {
                             hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                             Destroy(hit.collider.GetComponent<BoxCollider>());
-
                             TextPrefabInstance.gameObject.SetActive(false);
                             TextActive = false;
                         }
@@ -58,7 +57,6 @@ public class InteractScript : MonoBehaviour
                     {
                         TextPrefabInstance.GetComponentInChildren<Text>().text = "Räägi doktoriga";
                     }
-
                     TextPrefabInstance.gameObject.SetActive(true);
                 }
             }
@@ -72,5 +70,20 @@ public class InteractScript : MonoBehaviour
         if (TransparentWall.activeSelf)
             if (OVRInput.Get(OVRInput.Button.Three))
                 TransparentWall.gameObject.SetActive(false);
+
+        if (!OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) &&
+            !OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)) return;
+        if (!musicIsPlaying)
+        {
+            GetComponent<AudioSource>().Play();
+            musicIsPlaying = true;
+            Debug.Log(musicIsPlaying);
+        }
+        else
+        {
+            GetComponent<AudioSource>().Pause();
+            musicIsPlaying = false;
+            Debug.Log(musicIsPlaying);
+        }
     }
 }

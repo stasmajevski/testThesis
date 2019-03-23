@@ -85,6 +85,22 @@
     <Compile Include="Assets\Oculus\Spatializer\Editor\ONSPPropagationGeometryEditor.cs" />
     <Compile Include="Assets\Oculus\Spatializer\Editor\ONSPPropagationMaterialEditor.cs" />
     <Compile Include="Assets\Oculus\Spatializer\Editor\ONSPReflectionCustomGUI.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\Build.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\MaterialValueDrawer.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SimulationSettingsValueDrawer.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioAmbisonicsSourceInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioBakedStaticListenerNodeInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioCustomSettingsInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioDynamicObjectInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioGeometryInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioListenerInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioManagerInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioMaterialInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioMixerReturnGUI.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioProbeBoxInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioReverbGUI.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioSourceInspector.cs" />
+    <Compile Include="Assets\SteamAudio\Editor\SteamAudioWindow.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/kasutaja/Desktop/Stanislav Majevski/TERAPO/testThesis/Therapo_v1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
