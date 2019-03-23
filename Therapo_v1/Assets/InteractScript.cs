@@ -14,6 +14,7 @@ public class InteractScript : MonoBehaviour
     public GameObject TextPrefabInstance; // A text element to display when the player is in reach of the door
     [HideInInspector] public GameObject TextPrefabInstanceCopy; // A copy of the text prefab to prevent data corruption
     [HideInInspector] public bool TextActive;
+    private GameObject[] gameObjects;
 
     public GameObject TransparentWall;
 
@@ -42,6 +43,15 @@ public class InteractScript : MonoBehaviour
                 // Display the UI element when the player is in reach of the door
                 if (TextActive)
                 {
+                    gameObjects = GameObject.FindGameObjectsWithTag("Dialogue");
+                    if (gameObjects.Length == 0)
+                    {
+                        TextPrefabInstance.GetComponentInChildren<Text>().text = "Ukse avamiseks vajuta 'B'";
+                    }
+                    else
+                    {
+                        TextPrefabInstance.GetComponentInChildren<Text>().text = "Räägi doktoriga";
+                    }
                     TextPrefabInstance.gameObject.SetActive(true);
                 }
 

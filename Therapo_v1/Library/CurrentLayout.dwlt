@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 448}
   m_MaxSize: {x: 22012, y: 10024}
   vertical: 0
-  controlID: 131
+  controlID: 22
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 88
+  controlID: 68
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -384,9 +384,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -17.898964, y: 5.7569923, z: -69.354454}
+    m_Target: {x: -37, y: 0.10000038, z: -71.3}
     speed: 2
-    m_Value: {x: -17.898964, y: 5.7569923, z: -69.354454}
+    m_Value: {x: -37, y: 0.10000038, z: -71.3}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -414,13 +414,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.04980844, y: -0.030590288, z: 0.0015274326, w: 0.998289}
+    m_Target: {x: 0.08447277, y: -0.3500292, z: 0.031713463, w: 0.9323831}
     speed: 2
-    m_Value: {x: 0.049808443, y: -0.03059029, z: 0.0015274327, w: 0.99828905}
+    m_Value: {x: 0.08447277, y: -0.3500292, z: 0.031713463, w: 0.9323831}
   m_Size:
-    m_Target: 10.943377
+    m_Target: 232.25745
     speed: 2
-    m_Value: 10.943377
+    m_Value: 232.25745
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -463,18 +463,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 583d0000
       m_LastClickedID: 15704
-      m_ExpandedIDs: ccfbffffb63b0000803d0000ec3d0000
+      m_ExpandedIDs: befbffffc6fbffffcafbffffccfbffffa23b0000ca3b00003c3d0000583d00009a3d0000ec3d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Spotlight
-        m_OriginalName: Spotlight
+        m_Name: Canvas
+        m_OriginalName: Canvas
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 15536
+        m_UserData: 15704
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -525,19 +525,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\kasutaja\Desktop\Stanislav Majevski\TERAPO\testThesis\Therapo_v1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ba2e0000
-    m_LastClickedID: 11962
+    m_SelectedIDs: 802c0000
+    m_LastClickedID: 11392
     m_ExpandedIDs: 00000000ac230000802c0000f82c0000a82d0000aa2d0000f02d0000042e00004c2e00005c2e00006a2e0000ba2e0000f02e0000222f00002e2f0000482f0000822f0000942f0000a02f0000263000004c300000c0300000fa3000006032000078320000d03200005a330000163400006234000074340000b4340000e8340000ec340000803500008235000086350000ce350000a4360000ae3600008c370000063800005438000084380000c638000002390000323900005e390000c0390000824300008443000086430000884300008a4300008c4300008e4300009043000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 360}
+    m_ScrollPosition: {x: 0, y: 61}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 240
 --- !u!114 &16
