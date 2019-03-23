@@ -39,29 +39,28 @@ public class InteractScript : MonoBehaviour
             {
                 Debug.Log("REACHED");
                 InReach = true;
-
+                gameObjects = GameObject.FindGameObjectsWithTag("Dialogue");
+                
                 // Display the UI element when the player is in reach of the door
                 if (TextActive)
                 {
-                    gameObjects = GameObject.FindGameObjectsWithTag("Dialogue");
                     if (gameObjects.Length == 0)
                     {
-                        TextPrefabInstance.GetComponentInChildren<Text>().text = "Ukse avamiseks vajuta 'B'";
+                        TextPrefabInstance.GetComponentInChildren<Text>().text = "Ukse avamiseks vajuta \"B\"";
+                        if (OVRInput.Get(OVRInput.Button.Two))
+                        {
+                            hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+                            Destroy(hit.collider.GetComponent<BoxCollider>());
+
+                            TextPrefabInstance.gameObject.SetActive(false);
+                            TextActive = false;
+                        }
                     }
                     else
                     {
                         TextPrefabInstance.GetComponentInChildren<Text>().text = "Räägi doktoriga";
                     }
                     TextPrefabInstance.gameObject.SetActive(true);
-                }
-
-                if (OVRInput.Get(OVRInput.Button.Two))
-                {
-                    hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
-                    Destroy(hit.collider.GetComponent<BoxCollider>());
-
-                    TextPrefabInstance.gameObject.SetActive(false);
-                    TextActive = false;
                 }
             }
         }
