@@ -1,29 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class animControl : MonoBehaviour {
+public class animControl : MonoBehaviour
+{
     public Animator animator;
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    private void Start()
+    {
         animator = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            animator.Play("attack");
-        }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            animator.Play("walk");
-        }
+    // Update is called once per frame
+    private void Update()
+    {
+        animator.Play("idle");
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            animator.Play("die");
-        }
+        if (Input.GetKeyDown(KeyCode.Q)) animator.Play("attack");
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) animator.Play("walk");
+
+        if (Input.GetKeyDown(KeyCode.Mouse1)) animator.Play("die");
     }
 }

@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InteractScript : MonoBehaviour
 {
     [HideInInspector] public bool InReach;
-    public string Character = "e";
 
     // UI SETTINGS
     [Header("UI Settings")]
     [Tooltip("The image or text that will be shown whenever the player is in reach of the door.")]
     public GameObject TextPrefabInstance; // A text element to display when the player is in reach of the door
+
     [HideInInspector] public GameObject TextPrefabInstanceCopy; // A copy of the text prefab to prevent data corruption
     [HideInInspector] public bool TextActive;
     private GameObject[] gameObjects;
@@ -27,9 +25,9 @@ public class InteractScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        var ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
@@ -40,7 +38,7 @@ public class InteractScript : MonoBehaviour
                 Debug.Log("REACHED");
                 InReach = true;
                 gameObjects = GameObject.FindGameObjectsWithTag("Dialogue");
-                
+
                 // Display the UI element when the player is in reach of the door
                 if (TextActive)
                 {
@@ -60,29 +58,19 @@ public class InteractScript : MonoBehaviour
                     {
                         TextPrefabInstance.GetComponentInChildren<Text>().text = "Räägi doktoriga";
                     }
+
                     TextPrefabInstance.gameObject.SetActive(true);
                 }
             }
         }
-
         else
         {
             InReach = false;
             TextPrefabInstance.gameObject.SetActive(false);
-            // Destroy the UI element when Player is no longer in reach of the door
-            /*    if (TextActive)
-                {
-                    TextPrefabInstance.gameObject.SetActive(false);
-                    TextActive = false;
-                }*/
         }
 
         if (TransparentWall.activeSelf)
-        {
             if (OVRInput.Get(OVRInput.Button.Three))
-            {
                 TransparentWall.gameObject.SetActive(false);
-            }
-        }
     }
 }
