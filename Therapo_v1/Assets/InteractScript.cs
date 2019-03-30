@@ -18,6 +18,7 @@ public class InteractScript : MonoBehaviour
     private GameObject[] gameObjects;
     private bool musicIsPlaying;
 
+
     private void Start()
     {
         TextPrefabInstance.gameObject.SetActive(false);
@@ -68,22 +69,18 @@ public class InteractScript : MonoBehaviour
         }
 
         if (TransparentWall.activeSelf)
-            if (OVRInput.Get(OVRInput.Button.Three))
-                TransparentWall.gameObject.SetActive(false);
-
+            if (OVRInput.Get(OVRInput.Button.Three)) TransparentWall.gameObject.SetActive(false);
         if (!OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) &&
             !OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)) return;
         if (!musicIsPlaying)
         {
             GetComponent<AudioSource>().Play();
             musicIsPlaying = true;
-            Debug.Log(musicIsPlaying);
         }
         else
         {
             GetComponent<AudioSource>().Pause();
             musicIsPlaying = false;
-            Debug.Log(musicIsPlaying);
         }
     }
 }

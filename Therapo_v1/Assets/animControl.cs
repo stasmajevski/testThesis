@@ -1,24 +1,30 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class animControl : MonoBehaviour
 {
-    public Animator animator;
+    private Animator _animator;
+    public GameObject TransparentWall;
 
     // Use this for initialization
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        animator.Play("idle");
+        _animator.Play("idle",0);
 
-        if (Input.GetKeyDown(KeyCode.Q)) animator.Play("attack");
+         if (!TransparentWall.activeSelf) StartCoroutine(StartWalking());
+         if (Input.GetKeyDown(KeyCode.Mouse0)) _animator.Play("walk");
+    }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) animator.Play("walk");
-
-        if (Input.GetKeyDown(KeyCode.Mouse1)) animator.Play("die");
+    private IEnumerator StartWalking()
+    {
+        _animator.Play("walk", 1);
+        yield return new WaitForSeconds(5);
+        _animator.SetLayerWeight(1, 0);
     }
 }
