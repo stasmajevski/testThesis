@@ -48,7 +48,7 @@ public class InteractScript : MonoBehaviour
                         if (OVRInput.Get(OVRInput.Button.Two))
                         {
                             hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
-                            Destroy(hit.collider.GetComponent<BoxCollider>());
+                        //    Destroy(hit.collider.GetComponent<BoxCollider>());
                             TextPrefabInstance.gameObject.SetActive(false);
                             TextActive = false;
                         }
