@@ -19,22 +19,14 @@ public class InteractScript : MonoBehaviour
 
     private GameObject[] gameObjects;
     private bool musicIsPlaying;
-    private int xClicked;
-
-    private Queue<GameObject> _walls;
 
     private void Start()
     {
         TextPrefabInstance.gameObject.SetActive(false);
         TransparentWallSecond.gameObject.SetActive(false);
 
-        _walls.Enqueue(TransparentWall);
-        _walls.Enqueue(TransparentWallSecond);
-
         TextActive = true;
         musicIsPlaying = true;
-        xClicked = 0;
-
     }
 
     // Update is called once per frame
@@ -84,7 +76,6 @@ public class InteractScript : MonoBehaviour
 
         if (OVRInput.GetUp(OVRInput.Button.Three))
         {
-            Debug.Log("pressed");
             if (TransparentWall.activeSelf)
             {
                 TransparentWallSecond.gameObject.SetActive(true);
@@ -94,7 +85,6 @@ public class InteractScript : MonoBehaviour
             {
                 TransparentWallSecond.gameObject.SetActive(false);
             }
-
         }
 
         if (!OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) &&

@@ -8,3 +8,7 @@
 Added SteamAudio Plugin for Music (Play/Pause by button). Better text(pixels) in dialogue canvas.
 
 30.03 - Changed Player movement(fixed movement issue), grab spider (fixed collider issue), spider walk(5 sec) after first wall dissapears
+06.04 - Added second wall, added spider animation(jumping) after second wall dissapears
+
+
+13.04 - MAKE FINAL SCREENSHOTS!!!!!!!!!!!!!

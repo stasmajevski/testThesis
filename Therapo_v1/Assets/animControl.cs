@@ -5,6 +5,7 @@ public class animControl : MonoBehaviour
 {
     private Animator _animator;
     public GameObject TransparentWall;
+    public GameObject TransparentWallSecond;
 
     // Use this for initialization
     private void Start()
@@ -18,7 +19,8 @@ public class animControl : MonoBehaviour
         _animator.Play("idle",0);
 
          if (!TransparentWall.activeSelf) StartCoroutine(StartWalking());
-         if (Input.GetKeyDown(KeyCode.Mouse0)) _animator.Play("walk");
+         if (!TransparentWall.activeSelf && !TransparentWallSecond.activeSelf) StartCoroutine(StartJumping());
+        if (Input.GetKeyDown(KeyCode.Mouse0)) _animator.Play("walk");
     }
 
     private IEnumerator StartWalking()
@@ -26,5 +28,12 @@ public class animControl : MonoBehaviour
         _animator.Play("walk", 1);
         yield return new WaitForSeconds(5);
         _animator.SetLayerWeight(1, 0);
+    }
+
+    private IEnumerator StartJumping()
+    {
+        _animator.Play("jump", 2);
+        yield return new WaitForSeconds(3);
+        _animator.SetLayerWeight(2, 0);
     }
 }
