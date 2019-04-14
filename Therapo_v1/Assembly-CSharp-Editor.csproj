@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Ameye\DoorsFree\Scripts\Editor\ConditionalHidePropertyDrawer.cs" />
     <Compile Include="Assets\Ameye\DoorsFree\Scripts\Editor\SupportWindow.cs" />
+    <Compile Include="Assets\Editor\Instant Screenshot\ScreenshotTaker.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioImportPostProcessor.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioManagerInspector.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\MinMaxPropertyDrawer.cs" />
