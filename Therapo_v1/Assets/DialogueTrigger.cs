@@ -6,7 +6,6 @@ public class DialogueTrigger : MonoBehaviour
     private GameObject _go;
     private int _count;
 
-
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -16,9 +15,10 @@ public class DialogueTrigger : MonoBehaviour
     private void Update()
     {
         if (_count == 0)
-            if (OVRInput.Get(OVRInput.Button.One))
+            // if (OVRInput.Get(OVRInput.Button.One)) 
+                if (Input.GetKeyUp(KeyCode.T))
             {
-                if (GameObject.FindWithTag("Start") != null) _go = GameObject.FindWithTag("Start");
+            if (GameObject.FindWithTag("Start") != null) _go = GameObject.FindWithTag("Start");
                 if (_go != null) Destroy(_go);
                 TriggerDialogue();
             }

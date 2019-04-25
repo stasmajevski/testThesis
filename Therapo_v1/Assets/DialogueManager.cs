@@ -10,21 +10,54 @@ public class DialogueManager : MonoBehaviour
     public Button conButoon;
 
     private Queue<string> _sentences;
+    private Queue<AudioSource> _audioSources;
+
     private int _count;
+
+
+    private AudioSource[] _allAudioSources;
+
+    void StopAllAudio()
+    {
+        AudioSource backgroundMusic = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        _allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+
+        if (_allAudioSources != null)
+        {
+            List<AudioSource> list = new List<AudioSource>(_allAudioSources);
+            list.Remove(backgroundMusic);
+            _allAudioSources = list.ToArray();
+        }
+
+        if (_allAudioSources != null)
+            foreach (AudioSource audioS in _allAudioSources)
+            {
+                audioS.Stop();
+            }
+    }
+
 
     // Use this for initialization
     private void Start()
     {
         _sentences = new Queue<string>();
+        _audioSources = new Queue<AudioSource>();
         conButoon.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.One))
+        //  if (OVRInput.GetUp(OVRInput.Button.One))
+        if (Input.GetKeyUp(KeyCode.T))
         {
             _count++;
-            if (_count > 1) DisplayNextSentence();
+            if (_count > 1)
+            {
+                StopAllAudio();
+                DisplayNextSentence();
+                PlayNextAudioSource();
+
+            }
         }
     }
 
@@ -37,8 +70,11 @@ public class DialogueManager : MonoBehaviour
         _sentences.Clear();
 
         foreach (var sentence in dialogue.sentences) _sentences.Enqueue(sentence);
+        foreach (var audioSource in dialogue.audioSources) _audioSources.Enqueue(audioSource);
 
+        StopAllAudio();
         DisplayNextSentence();
+        PlayNextAudioSource();
     }
 
     public void DisplayNextSentence()
@@ -51,6 +87,13 @@ public class DialogueManager : MonoBehaviour
 
         var sentence = _sentences.Dequeue();
         dialogueMessage.text = sentence;
+    }
+
+    public void PlayNextAudioSource()
+    {
+        var audioSource = _audioSources.Dequeue();
+        Debug.Log(audioSource);
+        audioSource.Play();
     }
 
     public void EndDialogue()
