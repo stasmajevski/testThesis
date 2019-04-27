@@ -15,12 +15,11 @@ public class DialogueTrigger : MonoBehaviour
     private void Update()
     {
         if (_count == 0)
-            // if (OVRInput.Get(OVRInput.Button.One)) 
-                if (Input.GetKeyUp(KeyCode.T))
+            if (OVRInput.Get(OVRInput.Button.One)) 
             {
-            if (GameObject.FindWithTag("Start") != null) _go = GameObject.FindWithTag("Start");
-                if (_go != null) Destroy(_go);
-                TriggerDialogue();
+                if (GameObject.FindWithTag("Start") != null) _go = GameObject.FindWithTag("Start");
+                    if (_go != null) Destroy(_go);
+                    TriggerDialogue();
             }
     }
 }

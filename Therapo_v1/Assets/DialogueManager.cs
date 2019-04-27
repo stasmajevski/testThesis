@@ -47,8 +47,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        //  if (OVRInput.GetUp(OVRInput.Button.One))
-        if (Input.GetKeyUp(KeyCode.T))
+        if (OVRInput.GetUp(OVRInput.Button.One))
         {
             _count++;
             if (_count > 1)

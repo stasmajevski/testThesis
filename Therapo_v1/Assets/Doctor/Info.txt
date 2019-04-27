@@ -1,0 +1,23 @@
+Doctor
+
+A rigged and skinned character model. Created in 3ds Max and game ready. 
+
+The model is low-poly and ready for use in VR / AR and other real-time applications.
+ 
+The model is ready for animation or to be used in games and other projects.
+ 
+The model has been optimized, so it's good for mobile games, too. 
+
+The character has a single texture and an easy-to-use custom ring.
+
+It's possible to simply apply Unity animations to this model. 
+
+Number of polys: 568
+
+Number of verts: 527
+
+3ds Max and .OBJ file formats are included.
+
+3ds Max model rigged and skinned, so it's possible to easily customize and animate.
+
+Tags: ar character doctor game human low man mobile poly ready rigged skinned vr
