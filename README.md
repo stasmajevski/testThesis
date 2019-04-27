@@ -2,7 +2,7 @@
 
 House Model: EYEmaginary. (27. January 2015.). Unity 3D - Horror Game Tutorial #1 - Flashlight (Unity 4). URL: Youtube: https://youtu.be/OxkDLbvIGYI
 
-Doctor: Asset Store - https://assetstore.unity.com/packages/3d/avatars-game-animations-bible-free-demo-82784
+Doctor: Asset Store - https://assetstore.unity.com/packages/3d/doctor-67764
 
 Spider: Asset Store - https://assetstore.unity.com/packages/3d/characters/animals/animated-spider-22986
 
